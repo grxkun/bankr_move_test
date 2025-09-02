@@ -1,24 +1,14 @@
-{
-  "name": "sui-dapp-frontend",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "^13.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "24.3.0",
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5.0.0"
-  }
+"dependencies": {
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "next": "^15.5.2"
+},
+"devDependencies": {
+  "@types/node": "24.3.0",
+  "@types/react": "^19.1.12",
+  "@types/react-dom": "^19.1.9",
+  "autoprefixer": "^10.4.0",
+  "postcss": "^8.4.0",
+  "tailwindcss": "^3.3.0",
+  "typescript": "^5.0.0"
 }
