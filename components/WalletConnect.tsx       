@@ -1,0 +1,43 @@
+import React from 'react'
+import { useSuiContext } from '../context/SuiContext'
+
+const wallets = [
+  { name: 'Slush', id: 'slush' },
+  { name: 'Stashed', id: 'stashed' },
+  { name: 'Phantom', id: 'phantom' }
+]
+
+export default function WalletConnect() {
+  const { wallet, setWallet } = useSuiContext()
+
+  const connectWallet = async (providerId: string) => {
+    // TODO: Integrate @mysten/wallet-adapter here
+    setWallet({
+      address: '0xYourWalletAddress',
+      provider: providerId,
+    })
+  }
+
+  return (
+    <div>
+      {wallet ? (
+        <div className="flex items-center gap-2">
+          <span className="text-sm">Connected: {wallet.address.slice(0, 6)}...{wallet.address.slice(-4)}</span>
+          <button className="btn btn-primary" onClick={() => setWallet(null)}>Disconnect</button>
+        </div>
+      ) : (
+        <div className="flex gap-2">
+          {wallets.map(w => (
+            <button
+              key={w.id}
+              className="btn"
+              onClick={() => connectWallet(w.id)}
+            >
+              {w.name}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
